@@ -1,0 +1,37 @@
+Update system:
+sudo apt update
+sudo apt upgrade -y
+
+Install nginx:
+sudo apt install -y nginx
+
+Check nginx version:
+nginx -v
+
+Check service status:
+systemctl status nginx
+
+Start service manually if needed:
+sudo systemctl start nginx
+
+Check HTTP response:
+curl http://localhost
+
+Check listening port:
+ss -tuln | grep 80
+
+Validate config:
+sudo nginx -t
+
+Check config files:
+ls -l /etc/nginx
+ls -l /etc/nginx/sites-available
+ls -l /etc/nginx/sites-enabled
+
+Check logs:
+ls -l /var/log/nginx
+sudo tail -n 20 /var/log/nginx/access.log
+sudo tail -n 20 /var/log/nginx/error.log
+
+Enable autostart:
+sudo systemctl enable nginx

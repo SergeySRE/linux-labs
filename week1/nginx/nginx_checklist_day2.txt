@@ -1,0 +1,33 @@
+Nginx Day 2 checklist
+
+1.Check service state 
+Command:
+sudo systemctl status nginx
+Meaning:
+Is nginx active and loaded?
+
+2.Check HTTP response(reaction) 
+Command:
+curl http://localhost
+Meaning:
+Does nginx return a local HTTP response
+
+3.Check listening port
+Command:
+ss -tuln | grep 80
+Meaning:
+Is port 80 listening?
+
+4.Validate config
+Command:
+sudo nginx -t
+Meaning:
+Is nginx configuration syntactially valid?
+
+5.Check logs
+Commands:
+sudo tail -n 20 /var/log/nginx/access.log
+sudo tail -n 20 /var/log/nginx/error.log
+Meaning:
+Were there requests? Are there any errors?
+
