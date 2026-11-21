@@ -1,0 +1,14 @@
+[Unit]
+Description=Educational Python HTTP Backend
+After=network.target
+
+[Service]
+Type=simple
+User=rodionov
+WorkingDirectory=/home/rodionov/linux-labs/week2/reverse-proxy
+ExecStart=/usr/bin/python3 -m http.server 8000 --bind 127.0.0.1
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
